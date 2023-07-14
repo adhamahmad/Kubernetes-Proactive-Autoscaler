@@ -4,3 +4,6 @@
 [submodule "metricsToDb"]
 	path = metricsToDb
 	url = https://github.com/adhamahmad/metricsToDb.git
+[submodule "Kubernetes-Proactive-Autoscaler-Reasoner"]
+	path = Kubernetes-Proactive-Autoscaler-Reasoner
+	url = https://github.com/adhamahmad/Kubernetes-Proactive-Autoscaler-Reasoner.git
