@@ -1,3 +1,6 @@
 [submodule "nodeMetricsToDb"]
 	path = nodeMetricsToDb
 	url = https://github.com/adhamahmad/nodeMetricsToDb.git
+[submodule "metricsToDb"]
+	path = metricsToDb
+	url = https://github.com/adhamahmad/metricsToDb.git
