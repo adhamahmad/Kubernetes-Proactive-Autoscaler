@@ -10,3 +10,6 @@
 [submodule "node-predictor"]
 	path = node-predictor
 	url = https://github.com/adhamahmad/node-predictor.git
+[submodule "pod-predictor"]
+	path = pod-predictor
+	url = https://github.com/adhamahmad/pod-predictor.git
