@@ -16,3 +16,6 @@
 [submodule "AKS_Node_API"]
 	path = AKS_Node_API
 	url = https://github.com/adhamahmad/AKS_Node_API.git
+[submodule "AKS_Pod_API"]
+	path = AKS_Pod_API
+	url = https://github.com/adhamahmad/AKS_Pod_API.git
