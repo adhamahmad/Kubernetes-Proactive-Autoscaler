@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-scaler
+  namespace: proactive-autoscaler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-scaler
+  template:
+    metadata:
+      labels:
+        app: node-scaler
+    spec:
+      containers:
+      - name: node-scaler
+        image: heshaaa/aks-node-api:0.3
+        ports:
+        - containerPort: 5000

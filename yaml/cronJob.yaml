@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: metrics-writer
+  namespace: proactive-autoscaler
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: metrics-writer
+              image: adham541/metrics-to-db:7.3
+              command:
+                [
+                  "java",
+                  "-jar",
+                  "/app/metrics-to-db-1-jar-with-dependencies.jar",
+                ]
+          restartPolicy: OnFailure

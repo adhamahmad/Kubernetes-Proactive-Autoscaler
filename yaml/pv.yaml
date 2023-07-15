@@ -1,0 +1,16 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: mysql-pv
+  namespace: proactive-autoscaler
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  azureDisk:
+    kind: Managed
+    diskName: PodMetricsDisk
+    diskURI: /subscriptions/5507c442-a462-4e5d-a114-651e7a594b70/resourceGroups/PAKResourceGroup/providers/Microsoft.Compute/disks/PodMetricsDisk
+    cachingMode: None
+    fsType: ext4

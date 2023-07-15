@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-scaler
+  namespace: proactive-autoscaler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-scaler
+  template:
+    metadata:
+      labels:
+        app: pod-scaler
+    spec:
+      containers:
+      - name: pod-scaler
+        image: heshaaa/aks-pod-api:1.4
+        ports:
+        - containerPort: 5000
+        env:
+          - name: tenant
+            valueFrom:
+              secretKeyRef:
+                name: scaler-secret
+                key: AZ_TENANT
+          - name: user
+            valueFrom:
+              secretKeyRef:
+                name: scaler-secret
+                key: AZ_USERNAME
+          - name: key
+            valueFrom:
+              secretKeyRef:
+                name: scaler-secret
+                key: AZ_PASSWORD
+          - name: resource_group
+            valueFrom:
+              secretKeyRef:
+                name: scaler-secret
+                key: RESOURCE_GROUP
+          - name: cluster
+            valueFrom:
+              secretKeyRef:
+                name: scaler-secret
+                key: CLUSTER_NAME
+          - name: namespace
+            valueFrom:
+              secretKeyRef:
+                name: scaler-secret
+                key: NAMESPACE

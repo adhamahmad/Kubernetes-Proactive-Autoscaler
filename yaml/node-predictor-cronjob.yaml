@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: node-predictor
+  namespace: proactive-autoscaler
+spec:
+  schedule: "0 */12 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: node-predictor
+              image: adham541/node-predictor:1.3
+              command: ["python", "PredictorController.py"]
+          restartPolicy: OnFailure

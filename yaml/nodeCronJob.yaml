@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: node-metrics-writer
+  namespace: proactive-autoscaler
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: node-metrics-writer
+              image: adham541/node-metrics-writer:4.0
+              command:
+                [
+                  "java",
+                  "-jar",
+                  "/app/node_metrics_to_db-1-jar-with-dependencies.jar",
+                ]
+          restartPolicy: OnFailure

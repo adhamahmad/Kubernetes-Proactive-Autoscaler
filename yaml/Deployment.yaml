@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reasoner
+  namespace: proactive-autoscaler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reasoner
+  template:
+    metadata:
+      labels:
+        app: reasoner
+    spec:
+      containers:
+        - name: reasoner
+          image: adham541/reasoner:1.5

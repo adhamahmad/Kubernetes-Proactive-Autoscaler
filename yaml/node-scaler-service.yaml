@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-scaler
+  namespace: proactive-autoscaler
+  labels:
+    app: node-scaler
+spec:
+  selector:
+    app: node-scaler
+  ports:
+  - name: http
+    port: 5005
+    targetPort: 5000
+  type: NodePort
