@@ -13,3 +13,6 @@
 [submodule "pod-predictor"]
 	path = pod-predictor
 	url = https://github.com/adhamahmad/pod-predictor.git
+[submodule "AKS_Node_API"]
+	path = AKS_Node_API
+	url = https://github.com/adhamahmad/AKS_Node_API.git
