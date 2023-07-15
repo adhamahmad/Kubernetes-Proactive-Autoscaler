@@ -7,3 +7,6 @@
 [submodule "Kubernetes-Proactive-Autoscaler-Reasoner"]
 	path = Kubernetes-Proactive-Autoscaler-Reasoner
 	url = https://github.com/adhamahmad/Kubernetes-Proactive-Autoscaler-Reasoner.git
+[submodule "node-predictor"]
+	path = node-predictor
+	url = https://github.com/adhamahmad/node-predictor.git
